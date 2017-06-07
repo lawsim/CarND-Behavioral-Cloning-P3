@@ -1,0 +1,8 @@
+data
+.ipynb_checkpoints
+models
+*.swp
+*.p
+downloads
+windows_sim
+sample_data
