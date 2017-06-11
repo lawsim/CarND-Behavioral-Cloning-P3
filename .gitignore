@@ -7,6 +7,6 @@ downloads
 windows_sim
 sample_data
 model.ipynb
-run1
+run*
 test_clone.ipynb
 Behavioral Cloning Cheatsheet - CarND (1).pdf

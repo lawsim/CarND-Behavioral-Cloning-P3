@@ -58,7 +58,7 @@ The model used an adam optimizer, so the learning rate was not tuned manually.
 
 #### 2. Final Model Architecture
 
-The model begins with normalization, several convolutions then has a flatten layer and finally several fully connected layers.  Based on Nvidia's blog post, the convolutions perform the feature extraction and the fully connected layers provide the steering (although you cannot exactly state which portions of the network are doing what because it is an end-to-end network).
+The model begins with normalization, several convolutions then has a flatten layer and finally several fully connected layers with dropout interspersed to avoid overfitting.  Based on Nvidia's blog post, the convolutions perform the feature extraction and the fully connected layers provide the steering (although you cannot exactly state which portions of the network are doing what because it is an end-to-end network).
 
 ![alt text][model_summary]
 

@@ -5,7 +5,7 @@ import random
 from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
 from keras.models import Sequential
-from keras.layers import Flatten, Dense, Lambda, Cropping2D
+from keras.layers import Flatten, Dense, Lambda, Cropping2D, Dropout, SpatialDropout2D
 from keras.layers.convolutional import Conv2D
 from keras.layers.pooling import MaxPooling2D
 from keras.callbacks import EarlyStopping
@@ -95,7 +95,9 @@ def build_model():
     model.add(Flatten())
     # model.add(Dense(1164))
     model.add(Dense(100))
+    model.add(Dropout(0.5))
     model.add(Dense(50))
+    model.add(Dropout(0.3))
     model.add(Dense(10))
     model.add(Dense(1))
 
@@ -114,7 +116,7 @@ batch_size = 30
 epochs = 50 # shouldn't matter as much with early stopping
 
 # import data
-X_train, X_test, y_train, y_test = import_data(min_angle = 0.1)
+X_train, X_test, y_train, y_test = import_data(min_angle = 0.08, pct_min_drop=0.8)
 
 # build nvidia model
 model = build_model()
